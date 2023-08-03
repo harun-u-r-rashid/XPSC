@@ -4,42 +4,45 @@ using namespace std;
 
 int main()
 {
-    int t;cin>>t;
-
+    int t; cin>>t;
     while(t--)
     {
         int n; cin>>n;
 
-        string s; cin>>s;
 
-        string ans = "0";
 
-        for(int i=0; i<n-1; i++)
+        if(n/19 == 0)
         {
-            if(s[0] == s[i+1])
-                ans+='0';
-            else
-                ans+='1';
+            cout<<n<<"\n";
         }
-        int flag = 0;
 
-        for(int j = 0; j<n-1; j++)
+        else
         {
-            if(ans[j] == ans[j+1])
+            for(int i=1; i<=9; i++)
             {
-                flag = 1;
-                break;
+                for(int j = i+1; i<=9; i++)
+                {
+                    if(i+j == n)
+                    {
+                        cout<<i<<j<<"\n";
+                            continue;
+                    }
+                }
             }
         }
 
-          cout<<ans<<endl;
 
-
-        if(flag) cout<<"NO"<<"\n";
-        else cout<<"YES"<<"\n";
 
 
     }
-
     return 0;
 }
+
+
+
+
+
+
+
+
+
