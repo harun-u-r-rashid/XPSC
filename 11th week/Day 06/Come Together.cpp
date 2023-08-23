@@ -1,39 +1,42 @@
 
+
 #include<bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
     while(t--)
     {
-        int n ;
-        cin >> n;
-        int ans = 0;
-        int mn1 = INT_MAX;
-        int mn2 = INT_MAX;
 
+        int xa, ya;
+        cin >> xa >> ya;
+        int xb, yb;
+        cin >> xb >> yb;
+        int xc, yc;
+        cin >> xc >> yc;
 
-        vector<int>a(n);
+        long long ans1 = 0, ans2 = 0;
 
-        for(int i=0; i<n; i++) cin >> a[i];
-
-
-
-        for(int i=0; i<n; i++)
+        if((xb >= xa && xc >= xa) || (xb <= xa && xc <= xa))
         {
-            if(a[i] > mn1 && a[i] < mn2)
-            {
-                ans++;
-                mn2 = min(mn2, a[i]);
-                //cout << "mn2 "<<mn2<<" "<<a[i]<<"\n";
-            }
-            mn1 = min(mn1,a[i]);
-
-
+            ans1 = min(abs(xb - xa), abs(xc - xa));
         }
+
+        if((yb >= ya && yc >= ya) || (yb <= ya && yc <= ya))
+        {
+            ans2 = min(abs(yb - ya), abs(yc - ya));
+        }
+
+
+
+
+
+        long long ans = ans1 + ans2 + 1;
         cout << ans << "\n";
 
     }
+
     return 0;
 }
