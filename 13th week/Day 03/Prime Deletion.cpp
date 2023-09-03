@@ -1,4 +1,4 @@
-
+/*
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -47,5 +47,35 @@ int main()
         cout << ans << "\n";
     }
 
+    return 0;
+}
+*/
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t; cin >> t;
+    while(t--)
+    {
+     string s; cin >> s;
+        char ch;
+        for(int i=0; i<s.size(); i++)
+        {
+            if(s[i] == '1' || s[i] == '7')
+            {
+                 ch = s[i];
+                 break;
+            }
+
+        }
+
+        if(ch == '1') cout << 17 << "\n";
+        else cout << 71 << "\n";
+
+    }
     return 0;
 }
